@@ -6,18 +6,23 @@ function SectionTwo(props) {
   console.log(props);
   const { orders } = useContext(Context);
   return (
-    <div className="flex flex-col w-full h-screen">
+    <div className="flex flex-col w-full">
         <Navbar />
       {orders &&
-        orders.map((item) => (
-            <div className="flex w-full border">
-                <div className="flex flex-col items-center border w-1/2 border-gray-400">
-                    <img src={item.images} className="h-5/6 w-full" />
-                    <div className="w-full py-2 px-5 flex flex-col items-start gap-3">
+        orders.map((item,key) => (
+            <div key={key} className="flex w-full min-h-[90vh] border">
+                <div className="pr-10 flex flex-col items-center justify-between border w-1/2 h-full border-gray-400">
+                    <img src={item.images} className="h-2/3 w-full object-contain " />
+                    <div className=" w-full py-2 px-5 flex flex-col items-start gap-3">
                         <small>Tavallud sanasi va O'lgan sanasi</small>
-                        <h1 className="font-satisfy text-5xl">{item.year}</h1>
+                        <h1 className="font-satisfy text-5xl mt-4">{item.year}</h1>
                         <small>Toshkent,Uzbekistan</small>
                     </div>
+                </div>
+                <div className="border py-10 pl-5 flex flex-col items-start w-1/2 h-full ">
+                    <h1 className="text-6xl font-satisfy">{item.name}</h1>
+                    <p className="flex-wrap mt-5">{item.desc}</p>
+                    <p>{item.books}</p>
                 </div>
             </div>
         ))}
