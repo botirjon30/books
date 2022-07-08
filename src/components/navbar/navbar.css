@@ -1,0 +1,18 @@
+#column-navbar{
+    border: 1px solid white;
+    background-color: #fff;
+    border-radius: 10px;
+}
+#column-navbar::after{
+    position: absolute;
+    right: 3px;
+    top: -5px;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    transform: rotate(45deg);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    z-index: 9;
+}
